@@ -4,6 +4,21 @@ include '../config/conexion.php';
     // Recuperamos los datos del formulario
    
     // Insertamos un nuevo producto en la base de datos
+    
+
+$Apellido = $_POST['apellido'] ?? null;
+$Nombre = $_POST['nombre'] ?? null;
+$Dni = $_POST['dni'] ?? null;
+$Sexo = $_POST['sexo'] ?? null;
+$Domicilio = $_POST['domicilio'] ?? null;
+$Telefono = $_POST['telefono'] ?? null;
+$Correo = $_POST['correo'] ?? null;
+$Datos = $_POST['datos'] ?? null;
+
+$consulta1 = "INSERT INTO clientes (apellido, nombre, dni, sexo, domicilio, telefono, correo, datos_importantes)
+ VALUES ('$Apellido','$Nombre','$Dni','$Sexo','$Domicilio','$Telefono','$Correo','$Datos')";
+
+ $resultado = mysqli_query($scon, $consulta1);
    
 ?>
 
@@ -64,3 +79,5 @@ include '../config/conexion.php';
 </body>
 <?php include '../config/footer.php'; ?>
 </html>
+
+
